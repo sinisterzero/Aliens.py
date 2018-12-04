@@ -1,4 +1,4 @@
-#Added first while loop
+#Added second while loop
 
 week = str("week")
 lCheck = False
@@ -16,16 +16,20 @@ while lCheck==False:
             print("That is not a positive integer.")
     except ValueError:
         print("That is not a number.")
- 
 
-print ("Please input how many weeks the aliens have been on Earth for.")
-w = int(input())
+while wCheck==False:
+    try:
+        w = int(input("Please input how many weeks the aliens have been on Earth for. "))
+        if w > 0:
+            wCheck = True
+        else:
+            print("That is not a positive integer.")
+    except ValueError:
+        print("This is not a number.")
 
-if w > 0:
-    #calculations
-    for i in range(w):
-        if ( i == 1):
-            week = "weeks"
-        print("After", i + 1, week,", there are", l* 2**(i+1), "aliens on Earth.")
-else:
-    print ("You didn't enter a valid answer.")
+
+#calculations
+for i in range(w):
+    if (i == 1):
+        week = "weeks"
+    print("After", i + 1, week,", there are", l* 2**(i+1), "aliens on Earth.")
